@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cầu Sông Bé | Di tích lịch sử</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================= -->
+<!-- HEADER -->
+<!-- ============================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#trang-chu" class="brand">
+      <span class="brand-mark">CG</span>
+      <span class="brand-name">DI TÍCH<br><small>Cầu Sông Bé</small></span>
+    </a>
+    <div class="header-actions">
+      <nav class="main-nav">
+        <a href="#trang-chu" data-i18n-key="nav.home">Trang chủ</a>
+        <a href="#thuyet-minh" data-i18n-key="nav.narration">Thuyết minh</a>
+        <a href="#lich-su" data-i18n-key="nav.history">Lịch sử</a>
+        <a href="#gia-tri" data-i18n-key="nav.values">Giá trị</a>
+      </nav>
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================= -->
+<!-- SECTION 1 — TRANG CHỦ -->
+<!-- ============================= -->
+<section id="trang-chu" class="hero">
+  <div class="hero-crack" aria-hidden="true">
+    <svg viewBox="0 0 40 1000" preserveAspectRatio="none">
+      <path d="M20,0 L14,80 L26,150 L10,230 L24,300 L16,380 L28,460 L12,540 L22,620 L18,700 L26,780 L14,860 L20,1000" />
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow" data-i18n-key="hero.eyebrow">Di tích lịch sử cấp tỉnh Bình Dương</p>
+      <h1 data-i18n-key="hero.title">CẦU SÔNG BÉ</h1>
+      <p class="subtitle" data-i18n-key="hero.subtitle">Chứng nhân lịch sử giữa dòng sông Bé</p>
+      <p class="lead" data-i18n-key="hero.lead">Trải qua gần một thế kỷ tồn tại, Cầu Sông Bé không chỉ là công trình giao thông do người Pháp xây dựng mà còn là chứng tích của những giai đoạn lịch sử đầy biến động. Dấu tích cây cầu bị đánh sập trong những ngày cuối tháng 4 năm 1975 vẫn còn hiện hữu, nhắc nhớ về tinh thần đấu tranh kiên cường của quân và dân địa phương.</p>
+      <div class="hero-actions">
+        <a href="#lich-su" class="btn btn-primary" data-i18n-key="hero.cta">Khám phá ngay</a>
+        <button type="button" class="btn btn-outline" id="hero-audio-button" data-i18n-key="hero.secondary">Nghe thuyết minh</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- SECTION 2 — THUYẾT MINH -->
+<!-- ============================= -->
+<section id="thuyet-minh" class="narration">
+  <div class="narration-inner">
+    <div class="narration-media">
+      <img src="Ảnh/thuyetminh.jpg" alt="Thuyết minh di tích Cầu Gãy Sông Bé">
+    </div>
+    <div class="narration-copy">
+      <h2 data-i18n-key="narration.title">THUYẾT MINH DI TÍCH</h2>
+      <p data-i18n-key="narration.body">Cầu Sông Bé được xây dựng vào khoảng những năm 1925–1926 dưới thời Pháp thuộc nhằm phục vụ việc vận chuyển hàng hóa và khai thác các đồn điền cao su trong khu vực. Trong hai cuộc kháng chiến, cây cầu trở thành vị trí chiến lược quan trọng, gắn với nhiều trận đánh và sự hy sinh của quân dân địa phương. Đến ngày 29 tháng 4 năm 1975, phần giữa cây cầu bị đánh sập trong quá trình rút lui của quân đối phương, tạo nên hình ảnh "Cầu Gãy" còn lưu giữ đến ngày nay như một chứng tích của chiến tranh.</p>
+
+      <div class="audio-player" role="group" aria-label="Trình phát âm thanh thuyết minh">
+        <button id="audio-toggle" class="audio-play" type="button" aria-label="Play narration audio">▶</button>
+        <span id="audio-current-time" class="audio-time">00:00</span>
+        <div class="audio-track">
+          <div id="audio-progress" class="audio-progress"></div>
+          <span id="audio-knob" class="audio-knob"></span>
+        </div>
+        <span id="audio-duration" class="audio-time">00:00</span>
+      </div>
+      <button id="audio-trigger" class="btn btn-bronze" type="button" data-i18n-key="narration.button">Bắt đầu nghe</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- SECTION 3 — LỊCH SỬ HÌNH THÀNH -->
+<!-- ============================= -->
+<section id="lich-su" class="timeline-section">
+  <div class="timeline-marquee marquee-top" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+      </div>
+      <div class="marquee-group">
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="section-heading">
+    <h2 data-i18n-key="timeline.heading">LỊCH SỬ HÌNH THÀNH</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-spine" aria-hidden="true"></div>
+
+    <article class="timeline-item is-left">
+      <div class="timeline-media"><img src="Ảnh/1967.jpg" alt="Khởi công xây dựng cầu 1925-1926"></div>
+      <div class="timeline-content">
+        <span class="timeline-year">1925–1926</span>
+        <h3 data-i18n-key="timeline.item1.title">Khởi công xây dựng</h3>
+        <p data-i18n-key="timeline.item1.body">Thực dân Pháp xây dựng cầu nhằm kết nối các đồn điền cao su và phục vụ hoạt động khai thác thuộc địa tại khu vực Đông Nam Bộ.</p>
+      </div>
+    </article>
+
+    <article class="timeline-item is-right">
+      <div class="timeline-media"><img src="Ảnh/KhangChienChongPhap.webp" alt="Kháng chiến chống Pháp 1945-1954"></div>
+      <div class="timeline-content">
+        <span class="timeline-year">1945–1954</span>
+        <h3 data-i18n-key="timeline.item2.title">Kháng chiến chống Pháp</h3>
+        <p data-i18n-key="timeline.item2.body">Cây cầu trở thành vị trí quân sự quan trọng và chứng kiến nhiều phong trào đấu tranh của lực lượng cách mạng cũng như công nhân các đồn điền cao su.</p>
+      </div>
+    </article>
+
+    <article class="timeline-item is-left">
+      <div class="timeline-media"><img src="Ảnh/KhangChienChongMy.webp" alt="Kháng chiến chống Mỹ 1954-1975"></div>
+      <div class="timeline-content">
+        <span class="timeline-year">1954–1975</span>
+        <h3 data-i18n-key="timeline.item3.title">Kháng chiến chống Mỹ</h3>
+        <p data-i18n-key="timeline.item3.body">Cầu tiếp tục giữ vai trò chiến lược trong hệ thống giao thông và quân sự, là cửa ngõ kết nối Bình Dương với Bình Phước và Tây Nguyên.</p>
+      </div>
+    </article>
+
+    <article class="timeline-item is-right">
+      <div class="timeline-media"><img src="Ảnh/CauGay.webp" alt="Dấu mốc lịch sử 29 tháng 4 năm 1975"></div>
+      <div class="timeline-content">
+        <span class="timeline-year">29/04/1975</span>
+        <h3 data-i18n-key="timeline.item4.title">Dấu mốc lịch sử</h3>
+        <p data-i18n-key="timeline.item4.body">Trong những ngày cuối của cuộc kháng chiến, phần giữa cây cầu bị đánh sập. Kể từ đó, hình ảnh "Cầu Gãy" trở thành biểu tượng lịch sử của vùng đất Sông Bé.</p>
+      </div>
+    </article>
+  </div>
+  <div class="timeline-marquee marquee-bottom" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+      </div>
+      <div class="marquee-group">
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+        <img src="Ảnh/star_symbol_removebg.png" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- SECTION 4 — GIÁ TRỊ LỊCH SỬ -->
+<!-- ============================= -->
+<section id="gia-tri" class="values">
+  <div class="values-inner">
+    <h2 data-i18n-key="values.heading">GIÁ TRỊ LỊCH SỬ</h2>
+    <p class="values-lead" data-i18n-key="values.lead">Không chỉ là một công trình giao thông, Cầu Sông Bé còn là chứng nhân của lịch sử, ghi dấu nhiều sự kiện quan trọng trong hai cuộc kháng chiến và góp phần giáo dục truyền thống yêu nước cho các thế hệ hôm nay.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number">1925</span>
+        <span class="stat-label" data-i18n-key="values.stat1">Năm xây dựng</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">1975</span>
+        <span class="stat-label" data-i18n-key="values.stat2">Năm trở thành Cầu Gãy</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">2012</span>
+        <span class="stat-label" data-i18n-key="values.stat3">Được công nhận Di tích lịch sử cấp tỉnh</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">100+</span>
+        <span class="stat-label" data-i18n-key="values.stat4">Gần một thế kỷ tồn tại</span>
+      </div>
+    </div>
+
+    <div class="value-cards">
+      <div class="value-card">
+        <span class="value-index">01</span>
+        <h3 data-i18n-key="values.card1.title">Giá trị lịch sử</h3>
+        <p data-i18n-key="values.card1.body">Ghi dấu những sự kiện quan trọng trong lịch sử đấu tranh của dân tộc.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-index">02</span>
+        <h3 data-i18n-key="values.card2.title">Giá trị kiến trúc</h3>
+        <p data-i18n-key="values.card2.body">Là một trong những cây cầu bê tông cốt thép tiêu biểu được xây dựng từ thời Pháp thuộc còn lưu giữ dấu tích.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-index">03</span>
+        <h3 data-i18n-key="values.card3.title">Giá trị giáo dục</h3>
+        <p data-i18n-key="values.card3.body">Là địa điểm giúp thế hệ trẻ tìm hiểu về lịch sử địa phương và truyền thống yêu nước.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-index">04</span>
+        <h3 data-i18n-key="values.card4.title">Giá trị văn hóa</h3>
+        <p data-i18n-key="values.card4.body">Trở thành biểu tượng của vùng đất Sông Bé và điểm đến có ý nghĩa đối với người dân địa phương.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= -->
+<!-- FOOTER -->
+<!-- ============================= -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <span class="brand-name footer-logo">CẦU SÔNG BÉ</span>
+      <p data-i18n-key="footer.about">Di tích lịch sử ghi dấu ký ức về cây cầu bắc qua dòng sông Bé, chứng nhân của gần một thế kỷ biến động lịch sử.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n-key="footer.explore">Khám phá</h4>
+      <ul>
+        <li><a href="#trang-chu" data-i18n-key="nav.home">Trang chủ</a></li>
+        <li><a href="#thuyet-minh" data-i18n-key="nav.narration">Thuyết minh</a></li>
+        <li><a href="#lich-su" data-i18n-key="nav.history">Lịch sử hình thành</a></li>
+        <li><a href="#gia-tri" data-i18n-key="nav.values">Giá trị lịch sử</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n-key="footer.info">Thông tin</h4>
+      <ul class="footer-contact">
+        <li><span data-i18n-key="footer.addressLabel">Địa chỉ</span>7Q35+8VM, Cầu Phước Hoà, Phước Hòa, Hồ Chí Minh, Việt Nam</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n-key="footer.map">Bản đồ</h4>
+      <div class="footer-map-embed">
+        <a class="map-open-link" href="https://www.google.com/maps/search/?api=1&query=Di+tich+Cau+Gay+Song+Be+Phuoc+Hoa+Binh+Duong" target="_blank" rel="noopener">Open in Maps</a>
+        <iframe
+          src="https://www.google.com/maps?q=Di%20tich%20Cau%20Gay%20Song%20Be%20Phuoc%20Hoa%20Binh%20Duong&output=embed"
+          title="Bản đồ vị trí Cầu Sông Bé"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <p class="footer-map-address">7Q35+8VM, Cầu Phước Hoà, Phước Hòa, Hồ Chí Minh, Việt Nam</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-i18n-key="footer.copyright">© Công trình số hóa địa chỉ đỏ Di tích lịch sử Cầu Gãy Sông Bé. Thực hiện bởi đội hình Chuyên Nâng cao Kỹ năng số - Chiến dịch Tình nguyện Sinh viên Kinh tế 2026.</p>
+  </div>
+</footer>
+
+<script>
+  const header = document.querySelector('.site-header');
+  const sections = document.querySelectorAll('main > section, footer');
+  const languageToggle = document.getElementById('lang-toggle');
+  const audioToggle = document.getElementById('audio-toggle');
+  const audioTrigger = document.getElementById('audio-trigger');
+  const heroAudioButton = document.getElementById('hero-audio-button');
+  const audioCurrentTime = document.getElementById('audio-current-time');
+  const audioDuration = document.getElementById('audio-duration');
+  const audioProgress = document.getElementById('audio-progress');
+  const audioKnob = document.getElementById('audio-knob');
+
+  const narrationAudio = new Audio();
+  narrationAudio.preload = 'metadata';
+
+  const getNarrationSrc = (lang) => lang === 'en'
+    ? 'Voice/EnglishVoice.mp3'
+    : 'Voice/VietnameseVoice.mp3';
+
+  const setAudioState = (isPlaying) => {
+    if (!audioToggle) return;
+    audioToggle.textContent = isPlaying ? '❚❚' : '▶';
+    audioToggle.setAttribute('aria-label', isPlaying ? 'Pause narration audio' : 'Play narration audio');
+  };
+
+  const formatTime = (seconds) => {
+    if (!Number.isFinite(seconds)) return '00:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  };
+
+  const updateAudioProgress = () => {
+    if (!narrationAudio.duration) return;
+    const progress = (narrationAudio.currentTime / narrationAudio.duration) * 100;
+    if (audioProgress) audioProgress.style.width = `${progress}%`;
+    if (audioKnob) audioKnob.style.left = `${progress}%`;
+    if (audioCurrentTime) audioCurrentTime.textContent = formatTime(narrationAudio.currentTime);
+    if (audioDuration) audioDuration.textContent = formatTime(narrationAudio.duration);
+  };
+
+  const playNarration = () => {
+    const src = getNarrationSrc(currentLang);
+    if (narrationAudio.src !== window.location.href + src && narrationAudio.src !== src) {
+      narrationAudio.src = src;
+      narrationAudio.load();
+    }
+
+    narrationAudio.play().then(() => {
+      setAudioState(true);
+    }).catch(() => {
+      setAudioState(false);
+    });
+  };
+
+  const pauseNarration = () => {
+    narrationAudio.pause();
+    setAudioState(false);
+  };
+
+  const toggleNarration = () => {
+    if (narrationAudio.paused) {
+      playNarration();
+    } else {
+      pauseNarration();
+    }
+  };
+
+  if (audioToggle) {
+    audioToggle.addEventListener('click', toggleNarration);
+  }
+  if (audioTrigger) {
+    audioTrigger.addEventListener('click', toggleNarration);
+  }
+  if (heroAudioButton) {
+    heroAudioButton.addEventListener('click', () => {
+      playNarration();
+      document.getElementById('thuyet-minh')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  narrationAudio.addEventListener('timeupdate', updateAudioProgress);
+  narrationAudio.addEventListener('loadedmetadata', updateAudioProgress);
+  narrationAudio.addEventListener('ended', () => setAudioState(false));
+  narrationAudio.addEventListener('pause', () => setAudioState(false));
+  narrationAudio.addEventListener('play', () => setAudioState(true));
+
+  // Seeking / scrubbing support
+  const audioTrackEl = document.querySelector('.audio-track');
+  let isScrubbing = false;
+
+  const seekAt = (clientX) => {
+    if (!audioTrackEl || !narrationAudio.duration) return;
+    const rect = audioTrackEl.getBoundingClientRect();
+    let pct = (clientX - rect.left) / rect.width;
+    pct = Math.max(0, Math.min(1, pct));
+    narrationAudio.currentTime = pct * narrationAudio.duration;
+    updateAudioProgress();
+  };
+
+  if (audioTrackEl) {
+    audioTrackEl.addEventListener('click', (e) => {
+      seekAt(e.clientX);
+    });
+  }
+
+  if (audioKnob) {
+    audioKnob.addEventListener('pointerdown', (e) => {
+      isScrubbing = true;
+      try { audioKnob.setPointerCapture(e.pointerId); } catch (err) {}
+      document.body.style.userSelect = 'none';
+    });
+  }
+
+  document.addEventListener('pointermove', (e) => {
+    if (!isScrubbing) return;
+    seekAt(e.clientX);
+  });
+
+  document.addEventListener('pointerup', (e) => {
+    if (!isScrubbing) return;
+    isScrubbing = false;
+    try { audioKnob.releasePointerCapture && audioKnob.releasePointerCapture(e.pointerId); } catch (err) {}
+    document.body.style.userSelect = '';
+  });
+
+  const translations = {
+    vi: {
+      'nav.home': 'Trang chủ',
+      'nav.narration': 'Thuyết minh',
+      'nav.history': 'Lịch sử',
+      'nav.values': 'Giá trị',
+      'hero.eyebrow': 'Di tích lịch sử cấp tỉnh Bình Dương',
+      'hero.title': 'CẦU SÔNG BÉ',
+      'hero.subtitle': 'Chứng nhân lịch sử giữa dòng sông Bé',
+      'hero.lead': 'Trải qua gần một thế kỷ tồn tại, Cầu Sông Bé không chỉ là công trình giao thông do người Pháp xây dựng mà còn là chứng tích của những giai đoạn lịch sử đầy biến động. Dấu tích cây cầu bị đánh sập trong những ngày cuối tháng 4 năm 1975 vẫn còn hiện hữu, nhắc nhớ về tinh thần đấu tranh kiên cường của quân và dân địa phương.',
+      'hero.cta': 'Khám phá ngay',
+      'hero.secondary': 'Nghe thuyết minh',
+      'narration.title': 'THUYẾT MINH DI TÍCH',
+      'narration.body': 'Cầu Sông Bé được xây dựng vào khoảng những năm 1925–1926 dưới thời Pháp thuộc nhằm phục vụ việc vận chuyển hàng hóa và khai thác các đồn điền cao su trong khu vực. Trong hai cuộc kháng chiến, cây cầu trở thành vị trí chiến lược quan trọng, gắn với nhiều trận đánh và sự hy sinh của quân dân địa phương. Đến ngày 29 tháng 4 năm 1975, phần giữa cây cầu bị đánh sập trong quá trình rút lui của quân đối phương, tạo nên hình ảnh "Cầu Sông Bé" còn lưu giữ đến ngày nay như một chứng tích của chiến tranh.',
+      'narration.button': 'Bắt đầu nghe',
+      'timeline.heading': 'LỊCH SỬ HÌNH THÀNH',
+      'timeline.item1.title': 'Khởi công xây dựng',
+      'timeline.item1.body': 'Thực dân Pháp xây dựng cầu nhằm kết nối các đồn điền cao su và phục vụ hoạt động khai thác thuộc địa tại khu vực Đông Nam Bộ.',
+      'timeline.item2.title': 'Kháng chiến chống Pháp',
+      'timeline.item2.body': 'Cây cầu trở thành vị trí quân sự quan trọng và chứng kiến nhiều phong trào đấu tranh của lực lượng cách mạng cũng như công nhân các đồn điền cao su.',
+      'timeline.item3.title': 'Kháng chiến chống Mỹ',
+      'timeline.item3.body': 'Cầu tiếp tục giữ vai trò chiến lược trong hệ thống giao thông và quân sự, là cửa ngõ kết nối Bình Dương với Bình Phước và Tây Nguyên.',
+      'timeline.item4.title': 'Dấu mốc lịch sử',
+      'timeline.item4.body': 'Trong những ngày cuối của cuộc kháng chiến, phần giữa cây cầu bị đánh sập. Kể từ đó, hình ảnh "Cầu Sông Bé" trở thành biểu tượng lịch sử của vùng đất Sông Bé.',
+      'values.heading': 'GIÁ TRỊ LỊCH SỬ',
+      'values.lead': 'Không chỉ là một công trình giao thông, Cầu Sông Bé còn là chứng nhân của lịch sử, ghi dấu nhiều sự kiện quan trọng trong hai cuộc kháng chiến và góp phần giáo dục truyền thống yêu nước cho các thế hệ hôm nay.',
+      'values.stat1': 'Năm xây dựng',
+      'values.stat2': 'Năm trở thành Cầu Gãy',
+      'values.stat3': 'Được công nhận Di tích lịch sử cấp tỉnh',
+      'values.stat4': 'Gần một thế kỷ tồn tại',
+      'values.card1.title': 'Giá trị lịch sử',
+      'values.card1.body': 'Ghi dấu những sự kiện quan trọng trong lịch sử đấu tranh của dân tộc.',
+      'values.card2.title': 'Giá trị kiến trúc',
+      'values.card2.body': 'Là một trong những cây cầu bê tông cốt thép tiêu biểu được xây dựng từ thời Pháp thuộc còn lưu giữ dấu tích.',
+      'values.card3.title': 'Giá trị giáo dục',
+      'values.card3.body': 'Là địa điểm giúp thế hệ trẻ tìm hiểu về lịch sử địa phương và truyền thống yêu nước.',
+      'values.card4.title': 'Giá trị văn hóa',
+      'values.card4.body': 'Trở thành biểu tượng của vùng đất Sông Bé và điểm đến có ý nghĩa đối với người dân địa phương.',
+      'footer.about': 'Di tích lịch sử ghi dấu ký ức về cây cầu bắc qua dòng sông Bé, chứng nhân của gần một thế kỷ biến động lịch sử.',
+      'footer.explore': 'Khám phá',
+      'footer.info': 'Thông tin',
+      'footer.map': 'Bản đồ',
+      'footer.addressLabel': 'Địa chỉ',
+      'footer.phoneLabel': 'Điện thoại',
+      'footer.emailLabel': 'Email',
+      'footer.copyright': '© Công trình số hóa địa chỉ đỏ Di tích lịch sử Cầu Sông Bé. Thực hiện bởi đội hình Chuyên Nâng cao Kỹ năng số - Chiến dịch Tình nguyện Sinh viên Kinh tế 2026.'
+    },
+    en: {
+      'nav.home': 'Home',
+      'nav.narration': 'Narration',
+      'nav.history': 'History',
+      'nav.values': 'Values',
+      'hero.eyebrow': 'Provincial historical site of Binh Duong',
+      'hero.title': 'Sông Bé Bridge',
+      'hero.subtitle': 'Witness to history along the Sông Bé river',
+      'hero.lead': 'After nearly a century of existence, the Sông Bé Bridge is not only a transportation structure built by the French, but also a testament to the turbulent historical periods that shaped the region. The remains of the bridge destroyed in the final days of April 1975 still stand as a reminder of the steadfast spirit of the local people and armed forces.',
+      'hero.cta': 'Explore now',
+      'hero.secondary': 'Listen to narration',
+      'narration.title': 'SITE NARRATION',
+      'narration.body': 'The Sông Bé Bridge was built around 1925–1926 during the French colonial period to support the transport of goods and the exploitation of rubber plantations in the region. During the two resistance wars, the bridge became a strategically important location tied to many battles and sacrifices. On April 29, 1975, the middle section was destroyed during the withdrawal of the opposing forces, leaving the image of the “Broken Bridge” preserved to this day as a historical witness.',
+      'narration.button': 'Start listening',
+      'timeline.heading': 'FORMATION HISTORY',
+      'timeline.item1.title': 'Construction begins',
+      'timeline.item1.body': 'The French colonial government built the bridge to connect rubber plantations and support extraction activities in the Southeast region.',
+      'timeline.item2.title': 'Resistance against the French',
+      'timeline.item2.body': 'The bridge became a military stronghold and witnessed many resistance movements of revolutionary forces and plantation workers.',
+      'timeline.item3.title': 'Resistance against the Americans',
+      'timeline.item3.body': 'The bridge continued to play a strategic role in transportation and military logistics, linking Binh Duong with Binh Phuoc and the Central Highlands.',
+      'timeline.item4.title': 'Historic milestone',
+      'timeline.item4.body': 'In the final days of the resistance, the middle span of the bridge was destroyed. Since then, the image of the “Broken Bridge” has become a lasting historical symbol of the Sông Bé land.',
+      'values.heading': 'HISTORICAL VALUE',
+      'values.lead': 'More than just a transportation structure, the Sông Bé Bridge stands as a witness to history, marking important events in the two resistance wars and helping educate future generations about national traditions.',
+      'values.stat1': 'Year of construction',
+      'values.stat2': 'Year it became the Broken Bridge',
+      'values.stat3': 'Recognized as a provincial historical site',
+      'values.stat4': 'Nearly a century of existence',
+      'values.card1.title': 'Historical value',
+      'values.card1.body': 'Marks important events in the nation’s struggle for independence.',
+      'values.card2.title': 'Architectural value',
+      'values.card2.body': 'One of the notable reinforced concrete bridges built during the French colonial period that still preserves its traces.',
+      'values.card3.title': 'Educational value',
+      'values.card3.body': 'A place where young people can learn about the local history and patriotic traditions.',
+      'values.card4.title': 'Cultural value',
+      'values.card4.body': 'Becomes a symbol of the Sông Bé region and an important destination for local residents.',
+      'footer.about': 'A historical site that preserves the memory of the bridge crossing the Sông Bé river, a witness to nearly a century of historical upheaval.',
+      'footer.explore': 'Explore',
+      'footer.info': 'Information',
+      'footer.map': 'Map',
+      'footer.addressLabel': 'Address',
+      'footer.phoneLabel': 'Phone',
+      'footer.emailLabel': 'Email',
+      'footer.copyright': '© Công trình số hóa địa chỉ đỏ Di tích lịch sử Cầu Sông Bé. Thực hiện bởi đội hình Chuyên Nâng cao Kỹ năng số - Chiến dịch Tình nguyện Sinh viên Kinh tế 2026.'
+    }
+  };
+
+  const getTranslation = (lang, key) => translations[lang]?.[key] || translations.vi[key] || '';
+
+  const applyLanguage = (lang) => {
+    document.documentElement.lang = lang;
+    document.title = lang === 'vi'
+      ? 'Cầu Sông Bé | Di tích lịch sử'
+      : 'Sông Bé Bridge | Historical Site';
+
+    document.querySelectorAll('[data-i18n-key]').forEach((element) => {
+      const value = getTranslation(lang, element.getAttribute('data-i18n-key'));
+      if (value) {
+        element.textContent = value;
+      }
+    });
+
+    if (languageToggle) {
+      languageToggle.textContent = lang === 'vi' ? 'EN' : 'VI';
+      languageToggle.setAttribute('aria-label', lang === 'vi' ? 'Switch to English' : 'Chuyển sang tiếng Việt');
+    }
+
+    if (narrationAudio && narrationAudio.src) {
+      const currentSrc = narrationAudio.src;
+      const expectedSrc = getNarrationSrc(lang);
+      if (currentSrc.endsWith(expectedSrc) || currentSrc.endsWith(expectedSrc.replace(/^\.\//, ''))) {
+        updateAudioProgress();
+      }
+    }
+
+    localStorage.setItem('site-language', lang);
+  };
+
+  let currentLang = localStorage.getItem('site-language') || 'vi';
+  currentLang = translations[currentLang] ? currentLang : 'vi';
+
+  if (languageToggle) {
+    languageToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'vi' ? 'en' : 'vi';
+      applyLanguage(currentLang);
+    });
+  }
+
+  // Create Intersection Observer to detect which section is in view
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          
+          header.classList.remove('header-dark', 'header-light', 'header-footer');
+          
+          if (sectionId === 'trang-chu') {
+          } else if (sectionId === 'thuyet-minh' || sectionId === 'lich-su' || sectionId === 'gia-tri') {
+            header.classList.add('header-dark');
+          }
+        }
+      });
+      
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        if (footerRect.top < window.innerHeight) {
+          header.classList.remove('header-dark', 'header-light');
+          header.classList.add('header-footer');
+        }
+      }
+    },
+    { threshold: 0.3 }
+  );
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
+  applyLanguage(currentLang);
+</script>
+
+</body>
+</html>
